@@ -1,6 +1,7 @@
 # Drill Press Control
 
 ## Project Description
+The project: ![Final Code](FinalProject9main.c)
 Drill Press Control is a project designed to interface a stepper motor with a microcontroller. It provides functionality for motor actuation, pressure monitoring, real-time clock (RTC) reading, and user interface reporting. Additional signal conditioning and other features ensure precise control and monitoring.
 
 ## Development
@@ -11,24 +12,30 @@ Drill Press Control is a project designed to interface a stepper motor with a mi
 ### Part 2: ADC Sensor Code
 - Developed code to read simulated pressure sensor data using the ADC module of the MSP430.
 - Implemented threshold comparison logic to trigger events based on pressure readings.
+   ![ADC Sensor Code](FinalProject1.c)
 
 ### Part 3: I2C RTC Code
 - Wrote code to communicate with a real-time clock (RTC) module via the I2C protocol.
-- Ensured accurate timekeeping and synchronized operations based on time-based events.
+- Was used to save a time stamp when a button was pressed.
+   ![I2C RTC Code](FinalProject2.c)
 
 ### Part 4: UART Code
 - Implemented UART communication for user interface reporting.
 - Designed output messages to convey sensor status, motor activity, and time data.
+   ![UART Code](FinalProject3.c)
 
 ### Part 5: LED Timing Code
-- Programmed LED indicators to reflect the timing and status of various operations.
-- Used timers to synchronize LED behavior with motor and sensor activities.
+- Programmed LEDs to emulate the pulses of the motor.
+   ![LED Timing Code](FinalProject4.c)
 
 ### Part 6: Full Integration with Stepper Motor
-- Combined all modules to control the stepper motor based on sensor input and RTC timing.
-- Fine-tuned motor actuation for smooth and precise operation.
+- Combined the code from part 2-5 into one cohesive project, and added the stepper motor functionality.
+   ![Full Integration Code](FinalProject8main3.c)
 
 ### Part 7: Additional Functionality
+- The additional functionality was developed and but into the final code:
+   ![Final Code](FinalProjet9main.c)
+- Optimized the code to ISRs were short and instead used to trigger flags that were handled in main() and 
 - Implemented a rolling average for the ADC input. I first tried to do the averaging by iterating through an array, which had an O(N) runtime and negatively impacted the timing to the point of making the code unrunnable. This was optimized by using an index pointer to shift through the array, reducing the complexity to O(1) and significantly improving performance.  
 - Introduced a pressure threshold to enhance system safety. When the drill press pressure exceeds 50 lbs (a critical level that could damage the pressure sensor), the forward motor control is disabled, a buzzer alarm is activated, and a UART warning is sent to notify the user.  
 - Enhanced signal conditioning for the ADC input:  
