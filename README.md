@@ -29,7 +29,7 @@ Drill Press Control is a project designed to interface a stepper motor with a mi
 - Fine-tuned motor actuation for smooth and precise operation.
 
 ### Part 7: Additional Functionality
-- Implemented a rolling average for the ADC input. Initially, the averaging was performed by iterating through an array, which had an O(N) runtime and negatively impacted the timing. This was optimized by using an index pointer to shift through the array, reducing the complexity to O(1) and significantly improving performance.  
+- Implemented a rolling average for the ADC input. I first tried to do the averaging by iterating through an array, which had an O(N) runtime and negatively impacted the timing to the point of making the code unrunnable. This was optimized by using an index pointer to shift through the array, reducing the complexity to O(1) and significantly improving performance.  
 - Introduced a pressure threshold to enhance system safety. When the drill press pressure exceeds 50 lbs (a critical level that could damage the pressure sensor), the forward motor control is disabled, a buzzer alarm is activated, and a UART warning is sent to notify the user.  
 - Enhanced signal conditioning for the ADC input:  
   - Added a zener diode clipping circuit to prevent the ADC input from exceeding 3V.  
