@@ -1,8 +1,8 @@
 # Drill Press Control
 
 ## Project Description
-The project: ![Final Code](FinalProject9main.c)
-Drill Press Control is a project designed to interface a stepper motor with a microcontroller. It provides functionality for motor actuation, pressure monitoring, real-time clock (RTC) reading, and user interface reporting. Additional signal conditioning and other features ensure precise control and monitoring.
+-The project: ![Final Code](FinalProject9main.c)
+-Drill Press Control is a project designed to interface a stepper motor with a microcontroller. It provides functionality for motor actuation, pressure monitoring, real-time clock (RTC) reading, and user interface reporting. Additional signal conditioning and other features ensure precise control and monitoring.
 
 ## Development
 ### Part 1: Planning and Design
